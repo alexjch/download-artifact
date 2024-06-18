@@ -58,7 +58,8 @@ async function run(): Promise<void> {
   let artifacts: Artifact[] = []
 
   if (isSingleArtifactDownload) {
-    core.info(`Downloading single artifact`)
+    core.info(`Downloading single artifact '${inputs.name}'`)
+    core.info(`Name: '${inputs.name}' Options: '${options}'`)
 
     const {artifact: targetArtifact} = await artifactClient.getArtifact(
       inputs.name,
